@@ -23,7 +23,7 @@ Start with any trip, select a day, and choose **Add activity**. The arrow contro
 
 ## Run locally
 
-Use **Node 22.23.1** and **npm 10.9.8**. Exact dependencies are committed in package-lock.json.
+Use **Node 22.23.1** and **npm 10.9.8**. Exact dependencies are committed in package-lock.json. Project-local .npmrc enforces `legacy-peer-deps=false` so clean local installs match CI.
 
 ```sh
 nvm use
