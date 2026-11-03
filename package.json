@@ -11,7 +11,7 @@
     "dev": "vite dev --host 127.0.0.1 --port 4186",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1 --port 4186",
-    "typecheck": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "typecheck": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json && tsc --noEmit -p src/service-worker/tsconfig.json",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -37,7 +37,8 @@
     "typescript": "6.0.3",
     "typescript-eslint": "8.72.1",
     "vite": "8.3.5",
-    "vitest": "5.1.0"
+    "vitest": "5.1.0",
+    "yaml": "2.9.1"
   },
   "imports": {
     "#lib": "./src/lib/index.ts",

@@ -9,3 +9,7 @@
 ## Visual target
 
 A refined travel notebook: warm #f7f7f2 paper, soft blue sidebar, cobalt accents, editorial destination imagery and large typographic headings. Desktop: compact persistent navigation, wide cover, slim day rail, spacious timeline and a useful trip summary. Mobile: top navigation, horizontal day rail, full-width activity controls. No supplied Roam reference exists; assess against this original art direction.
+
+## Final typography decision
+
+The portfolio-wide uniqueness requirement reserves **Outfit display + Lato interface** for Roam. These self-hosted OFL families replace the early typography experiment. The final composition stays app-first: editable day timeline, day rail and derived summary, supported by destination imagery. Final screenshots and visual review are in docs/screenshots and docs/visual-review.json.

@@ -1,0 +1,55 @@
+{
+  "measured": "2026-11-03",
+  "method": "Actual adapter-static build output; gzip per file with Node zlib; totals across all routes, not a page-transfer or Lighthouse score",
+  "js": {
+    "files": 18,
+    "bytes": 140809,
+    "gzipBytes": 56833
+  },
+  "css": {
+    "files": 1,
+    "bytes": 29806,
+    "gzipBytes": 7072
+  },
+  "fonts": {
+    "files": 3,
+    "bytes": 60376,
+    "gzipBytes": 60244
+  },
+  "images": {
+    "files": 6,
+    "bytes": 2563800,
+    "gzipBytes": 2563418
+  },
+  "html": {
+    "files": 5,
+    "bytes": 76027,
+    "gzipBytes": 18285
+  },
+  "imageFiles": [
+    {
+      "path": "build/images/dolomites-900.jpg",
+      "bytes": 195909
+    },
+    {
+      "path": "build/images/dolomites.jpg",
+      "bytes": 614170
+    },
+    {
+      "path": "build/images/kyoto-900.jpg",
+      "bytes": 179165
+    },
+    {
+      "path": "build/images/kyoto.jpg",
+      "bytes": 536630
+    },
+    {
+      "path": "build/images/lisbon-900.jpg",
+      "bytes": 261338
+    },
+    {
+      "path": "build/images/lisbon.jpg",
+      "bytes": 776588
+    }
+  ]
+}

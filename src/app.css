@@ -1,26 +1,26 @@
 @font-face {
-  font-family: 'DM Sans';
+  font-family: 'Outfit';
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 100 900;
   font-display: swap;
-  src: url('./lib/assets/dm-sans-latin.woff2') format('woff2');
+  src: url('./lib/assets/outfit-latin.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'DM Serif Display';
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./lib/assets/dm-serif-display-latin.woff2') format('woff2');
+  src: url('./lib/assets/lato-latin-400.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'DM Serif Display';
-  font-style: italic;
-  font-weight: 400;
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
   font-display: swap;
-  src: url('./lib/assets/dm-serif-display-italic-latin.woff2') format('woff2');
+  src: url('./lib/assets/lato-latin-700.woff2') format('woff2');
 }
 :root {
-  font-family: 'DM Sans', Arial, sans-serif;
+  font-family: 'Lato', Arial, sans-serif;
   color: #243831;
   background: #f7f7f2;
   font-synthesis: none;
@@ -29,7 +29,7 @@
   --muted: #66746b;
   --blue: #2459af;
   --line: #e0e4dc;
-  --serif: 'DM Serif Display', Georgia, serif;
+  --display: 'Outfit', Arial, sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -93,7 +93,7 @@ button svg {
   vertical-align: middle;
 }
 h1 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   letter-spacing: -2.8px;
   line-height: 1.06;
@@ -268,7 +268,7 @@ p {
   margin-bottom: 14px;
 }
 .notebook p {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 24px;
   line-height: 1.18;
   letter-spacing: -0.7px;
@@ -373,7 +373,7 @@ p {
   gap: 15px;
   align-items: center;
   color: #7c8373;
-  font: italic 13px/1.7 var(--serif);
+  font: italic 13px/1.7 var(--display);
   padding: 0 13px 7px;
 }
 .heading-note svg {
@@ -462,7 +462,7 @@ p {
   margin-bottom: 10px;
 }
 .trip-card h3 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 27px;
   line-height: 1.15;
   letter-spacing: -0.85px;
@@ -524,7 +524,7 @@ p {
   line-height: 1;
 }
 .overview-note h2 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 24px;
   margin-bottom: 8px;
 }
@@ -673,7 +673,7 @@ p {
 }
 .trip-tabs > .quiet {
   margin-left: auto;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-style: italic;
   font-size: 13px;
 }
@@ -735,7 +735,7 @@ p {
 .day-rail-note {
   padding: 24px 5px;
   color: #819081;
-  font: italic 12px/1.7 var(--serif);
+  font: italic 12px/1.7 var(--display);
 }
 .day-rail-note > span {
   font-size: 39px;
@@ -761,7 +761,7 @@ p {
 }
 .day-heading h2 {
   font-size: 25px;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   letter-spacing: -0.5px;
   margin: 8px 0 7px;
@@ -1064,7 +1064,7 @@ p {
   height: 16px;
 }
 .trip-summary h3 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 23px;
   letter-spacing: -0.5px;
   margin-top: 14px;
@@ -1101,7 +1101,7 @@ p {
 .budget-summary strong {
   font-weight: 500;
   font-size: 23px;
-  font-family: var(--serif);
+  font-family: var(--display);
 }
 .budget-summary > p > span {
   font-size: 11px;
@@ -1164,7 +1164,7 @@ p {
   font-size: 10px;
 }
 .empty-day h3 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 27px;
   letter-spacing: -0.7px;
   margin: 12px 0;
@@ -1204,7 +1204,7 @@ p {
   height: 16px;
 }
 .saved-place h3 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 24px;
   margin: 14px 0 10px;
   letter-spacing: -0.5px;
@@ -1316,7 +1316,7 @@ dialog::backdrop {
   color: #6c8168;
 }
 dialog h2 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 32px;
   font-weight: 400;
   letter-spacing: -1px;
@@ -2266,5 +2266,57 @@ dialog input::placeholder {
   }
   .activity-controls {
     gap: 4px;
+  }
+}
+@media (max-width: 820px) {
+  .app-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sidebar {
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .brand {
+    flex-shrink: 0;
+  }
+  .nav-destinations {
+    min-width: 0;
+  }
+}
+
+/* Roam's own geometric display and humanist interface pair. */
+h1 {
+  font-weight: 500;
+  letter-spacing: -2.2px;
+}
+h1 em {
+  font-style: normal;
+  font-weight: 500;
+}
+.day-heading h2,
+.trip-summary h3,
+.trip-card h3 {
+  font-weight: 500;
+}
+.brand {
+  font-family: var(--display);
+  font-weight: 600;
+}
+.heading-note,
+.day-rail-note,
+.trip-tabs > .quiet {
+  font-style: normal;
+}
+dialog {
+  max-height: min(600px, calc(100dvh - 48px));
+}
+@media (max-width: 600px) {
+  .hero-copy h1 {
+    font-size: 40px;
+    letter-spacing: -1.7px;
+  }
+  .day-heading h2 {
+    font-size: 25px;
   }
 }

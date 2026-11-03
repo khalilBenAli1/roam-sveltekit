@@ -91,6 +91,8 @@
   <div class="trip-hero">
     <img
       src={asset(`images/${trip.id}.jpg`)}
+      srcset={`${asset(`images/${trip.id}-900.jpg`)} 900w, ${asset(`images/${trip.id}.jpg`)} 1536w`}
+      sizes="(max-width: 820px) 100vw, calc(100vw - 218px)"
       alt={trip.id === 'kyoto'
         ? 'Illustrative Kyoto old town at dawn'
         : trip.id === 'lisbon'
@@ -113,13 +115,16 @@
     <span
       ><Icon name="calendar" />{dateLabel(trip.days[0].date)} – {dateLabel(
         trip.days.at(-1)!.date
-      )} 2027</span
+      )}
+      {new Date(trip.days.at(-1)!.date + 'T12:00:00Z').getUTCFullYear()}</span
     ><span><Icon name="people" />{trip.travelers} travelers</span><span
       ><Icon name="trips" />{trip.days.length} days, your way</span
     ><span class="saved-indicator"
-      ><Icon name="check" />{planner.state === 'ready'
-        ? 'Saved on this device'
-        : 'For this visit only'}</span
+      ><Icon name="check" />{!planner.loaded
+        ? 'Opening local plans…'
+        : planner.state === 'ready'
+          ? 'Saved on this device'
+          : 'For this visit only'}</span
     >
   </div>
   <div class="trip-tabs" aria-label="Trip sections">

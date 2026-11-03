@@ -244,3 +244,61 @@ for (const width of [390, 768, 1440])
       ).violations
     ).toEqual([]);
   });
+
+test('cached planner reloads offline with saved edits', async ({
+  page,
+  context
+}) => {
+  await page.goto(route);
+  await add(page, 'An offline little plan');
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+    if (!navigator.serviceWorker.controller)
+      await new Promise<void>((resolve) =>
+        navigator.serviceWorker.addEventListener(
+          'controllerchange',
+          () => resolve(),
+          { once: true }
+        )
+      );
+  });
+  await context.setOffline(true);
+  await page.reload();
+  await expect(card(page, 'An offline little plan')).toBeVisible();
+  await page
+    .getByRole('button', { name: 'Remove An offline little plan', exact: true })
+    .click();
+  await expect(card(page, 'An offline little plan')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Undo', exact: true }).click();
+  await expect(card(page, 'An offline little plan')).toBeVisible();
+});
+
+test('large text reflows and direct unknown routes have a useful return link', async ({
+  page
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(route);
+  await page.addStyleTag({ content: 'html {font-size:200%} body {zoom:1.25}' });
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth
+    )
+  ).toBe(true);
+  await page.getByRole('button', { name: 'Add activity', exact: true }).click();
+  await page
+    .getByLabel('Activity name')
+    .fill(
+      'A long and lovely name for a morning wander through a neighborhood we have never visited before'
+    );
+  await page.getByRole('button', { name: 'Add to my day' }).click();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth
+    )
+  ).toBe(true);
+  const response = await page.goto('a-path-that-does-not-exist/');
+  expect(response?.status()).toBe(404);
+  await expect(
+    page.getByRole('link', { name: 'Back to my trips →' })
+  ).toBeVisible();
+});

@@ -20,7 +20,7 @@ JPEG delivery assets are resized/compressed derivatives, with no external runtim
 
 ## Typography and interface art
 
-- DM Sans, variable Latin WOFF2, and DM Serif Display, normal/italic Latin WOFF2, self-hosted in `src/lib/assets`. SIL Open Font License 1.1; full notices in `docs/licenses`. Obtained from the official Google Fonts stylesheet and fonts.gstatic.com on November 3, 2026. Upstream license sources: [DM Sans](https://github.com/google/fonts/tree/main/ofl/dmsans), [DM Serif Display](https://github.com/google/fonts/tree/main/ofl/dmserifdisplay). Font source URLs are recorded in `docs/fonts-source.css`.
+- Outfit, variable Latin WOFF2, and Lato, regular/bold Latin WOFF2, self-hosted in `src/lib/assets`. SIL Open Font License 1.1; full notices in `docs/licenses`. Obtained from the official Google Fonts stylesheet and fonts.gstatic.com on November 3, 2026. Upstream license sources: [Outfit](https://github.com/google/fonts/tree/main/ofl/outfit), [Lato](https://github.com/google/fonts/tree/main/ofl/lato). Font source URLs are recorded in `docs/fonts-source.css`.
 - Roam wordmark, compass favicon, inline SVG interface glyphs, colors and layouts are original code created for this application. No third-party icon package.
 - `docs/screenshots` contains real browser captures of the running application, not reference mockups. No supplied Roam screenshot exists; the design follows the original written art direction in `docs/PLAN.md`.
 

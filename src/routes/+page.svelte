@@ -11,7 +11,7 @@
       month: 'short',
       timeZone: 'UTC'
     };
-    return `${new Date(dates[0].date + 'T12:00:00Z').toLocaleDateString('en-GB', options)} – ${new Date(dates.at(-1)!.date + 'T12:00:00Z').toLocaleDateString('en-GB', options)}, 2027`;
+    return `${new Date(dates[0].date + 'T12:00:00Z').toLocaleDateString('en-GB', options)} – ${new Date(dates.at(-1)!.date + 'T12:00:00Z').toLocaleDateString('en-GB', options)}, ${new Date(dates.at(-1)!.date + 'T12:00:00Z').getUTCFullYear()}`;
   };
 </script>
 
@@ -46,6 +46,8 @@
         ><div class="trip-cover">
           <img
             src={asset(`images/${trip.id}.jpg`)}
+            srcset={`${asset(`images/${trip.id}-900.jpg`)} 900w, ${asset(`images/${trip.id}.jpg`)} 1536w`}
+            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
             width="1536"
             height="1024"
             alt={trip.id === 'kyoto'

@@ -42,6 +42,15 @@
   }
 </script>
 
+<svelte:head>
+  <meta property="og:site_name" content="Roam" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:image"
+    content="https://khalilbenali1.github.io/roam-sveltekit/images/kyoto-900.jpg"
+  />
+  <meta name="twitter:card" content="summary_large_image" />
+</svelte:head>
 <a class="skip" href="#main">Skip to content</a>
 <div class="app-shell">
   <aside class="sidebar" aria-label="Roam navigation">
@@ -64,7 +73,7 @@
           ><span class={`destination-dot ${trip.id}`}></span>{trip.country ===
           'Japan'
             ? 'Kyoto'
-            : trip.country === 'Portugal'
+            : trip.id === 'lisbon'
               ? 'Lisbon'
               : 'The Dolomites'}<span class="tiny-arrow">↗</span></a
         >{/each}
@@ -102,6 +111,7 @@
         ><input
           class="visually-hidden"
           bind:this={importInput}
+          tabindex="-1"
           type="file"
           accept="application/json,.json"
           aria-label="Import Roam plans"
