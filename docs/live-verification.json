@@ -1,0 +1,81 @@
+{
+  "verified": "2026-11-03",
+  "url": "https://khalilbenali1.github.io/roam-sveltekit/",
+  "implementationCommit": "cbb6262fdf8bb4d456ac2c6017e9e63941120a45",
+  "releaseRun": "https://github.com/khalilBenAli1/roam-sveltekit/actions/runs/41565329697",
+  "routes": [
+    {
+      "route": "",
+      "status": 200,
+      "title": "My trips · Roam"
+    },
+    {
+      "route": "trips/kyoto/",
+      "status": 200,
+      "title": "A little lost in Kyoto · Roam"
+    },
+    {
+      "route": "trips/lisbon/",
+      "status": 200,
+      "title": "Lisbon, in no hurry · Roam"
+    },
+    {
+      "route": "trips/dolomites/",
+      "status": 200,
+      "title": "A breath of alpine air · Roam"
+    }
+  ],
+  "assets": [
+    {
+      "path": "images/kyoto.jpg",
+      "status": 200,
+      "bytes": 536630
+    },
+    {
+      "path": "images/kyoto-900.jpg",
+      "status": 200,
+      "bytes": 179165
+    },
+    {
+      "path": "images/lisbon.jpg",
+      "status": 200,
+      "bytes": 776588
+    },
+    {
+      "path": "images/lisbon-900.jpg",
+      "status": 200,
+      "bytes": 261338
+    },
+    {
+      "path": "images/dolomites.jpg",
+      "status": 200,
+      "bytes": 614170
+    },
+    {
+      "path": "images/dolomites-900.jpg",
+      "status": 200,
+      "bytes": 195909
+    },
+    {
+      "path": "favicon.svg",
+      "status": 200,
+      "bytes": 168
+    },
+    {
+      "path": "service-worker.js",
+      "status": 200,
+      "bytes": 2438
+    }
+  ],
+  "coreFlow": [
+    "create activity",
+    "overlap feedback",
+    "move to empty day",
+    "remove",
+    "undo",
+    "offline reload with persisted edit"
+  ],
+  "notFoundStatus": 404,
+  "errors": [],
+  "failed": []
+}

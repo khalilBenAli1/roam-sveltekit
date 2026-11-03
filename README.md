@@ -6,7 +6,7 @@ An original, app-first itinerary planner created in **November 2026** for a fron
 
 ![Roam desktop itinerary workspace](docs/screenshots/planner-desktop.png)
 
-**Demo:** publication verification in progress. **[Source](https://github.com/khalilBenAli1/roam-sveltekit)**
+**[Verified live demo](https://khalilbenali1.github.io/roam-sveltekit/)**. **[Source](https://github.com/khalilBenAli1/roam-sveltekit)**
 
 ## Make a day your own
 
