@@ -42,3 +42,7 @@ The clean non-legacy npm install and audit on November 3 report 16 **development
 Remote PR/Pages CI and successful public route/core-flow verification are recorded in RELEASE.md and live-verification.json. The first remote core checkpoint correctly failed on a YAML optional-peer lock resolution mismatch; the fix explicitly pins the compatible YAML 2 development peer and a fresh clean install has been verified.
 
 The project-local `.npmrc` explicitly disables legacy peer resolution to keep local clean installs consistent with CI, regardless of a user’s global npm setting. The global configuration was left untouched.
+
+## Overflow verification correction
+
+The four horizontal-overflow assertions compare `document.documentElement.scrollWidth` with `document.documentElement.clientWidth`. They do not use `innerWidth`, which may expand along with overflowing content in a mobile viewport. After this correction, all eight relevant Chromium/WebKit journeys passed: overview and itinerary at 390/768/1440, plus the narrow long-activity-title and content-zoom journey. No application layout or overflow-hiding changes were needed.
