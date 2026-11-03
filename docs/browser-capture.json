@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-03",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1100
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "fonts": {
+    "display": "Outfit, Arial, sans-serif",
+    "body": "Lato, Arial, sans-serif",
+    "outfitLoaded": true,
+    "latoLoaded": true
+  }
+}
