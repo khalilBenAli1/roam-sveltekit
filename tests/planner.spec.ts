@@ -217,7 +217,9 @@ for (const width of [390, 768, 1440])
     ).toBeVisible();
     expect(
       await page.evaluate(
-        () => document.documentElement.scrollWidth <= innerWidth
+        () =>
+          document.documentElement.scrollWidth <=
+          document.documentElement.clientWidth
       )
     ).toBe(true);
     expect(
@@ -243,7 +245,9 @@ for (const width of [390, 768, 1440])
     ).toBeVisible();
     expect(
       await page.evaluate(
-        () => document.documentElement.scrollWidth <= innerWidth
+        () =>
+          document.documentElement.scrollWidth <=
+          document.documentElement.clientWidth
       )
     ).toBe(true);
     expect(
@@ -291,7 +295,9 @@ test('large text reflows and direct unknown routes have a useful return link', a
   await page.addStyleTag({ content: 'html {font-size:200%} body {zoom:1.25}' });
   expect(
     await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth
+      () =>
+        document.documentElement.scrollWidth <=
+        document.documentElement.clientWidth
     )
   ).toBe(true);
   await page.getByRole('button', { name: 'Add activity', exact: true }).click();
@@ -303,7 +309,9 @@ test('large text reflows and direct unknown routes have a useful return link', a
   await page.getByRole('button', { name: 'Add to my day' }).click();
   expect(
     await page.evaluate(
-      () => document.documentElement.scrollWidth <= innerWidth
+      () =>
+        document.documentElement.scrollWidth <=
+        document.documentElement.clientWidth
     )
   ).toBe(true);
   const response = await page.goto('a-path-that-does-not-exist/');
