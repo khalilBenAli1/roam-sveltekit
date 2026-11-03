@@ -1,5 +1,5 @@
 {
-  "iteration": 4,
+  "iteration": 5,
   "score": 94,
   "threshold": 90,
   "threshold_pass": true,
@@ -7,7 +7,7 @@
   "category_match": true,
   "differences": [],
   "suggestions": [],
-  "reasoning": "The app-first day workspace follows the original warm-paper and soft-blue brief with original destination artwork, clear timeline hierarchy, distinct Outfit/Lato typography and a compact useful mobile day rail. Readable metadata, corrected timestamps, contrast and zoom reflow resolve the previous visual findings.",
+  "reasoning": "The app-first day workspace follows the original warm-paper and soft-blue brief with original destination artwork, clear timeline hierarchy, distinct Outfit/Lato typography and a compact useful mobile day rail. Readable metadata, corrected timestamps, contrast and zoom reflow resolve the previous visual findings. Final mobile footer reset access and native dialog focus restoration are also verified.",
   "next_actions": [
     "Publish only after passing remote CI; verify public routes and core interaction"
   ],

@@ -228,6 +228,16 @@ for (const width of [390, 768, 1440])
       ).violations
     ).toEqual([]);
     await page.goto(route);
+    const reset = page.getByRole('button', {
+      name: 'Reset demo plans',
+      exact: true
+    });
+    await expect(reset).toBeVisible();
+    await reset.click();
+    await page
+      .getByRole('button', { name: 'Keep my plans', exact: true })
+      .click();
+    await expect(reset).toBeFocused();
     await expect(
       page.getByRole('button', { name: 'Add activity', exact: true })
     ).toBeVisible();

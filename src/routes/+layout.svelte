@@ -9,6 +9,16 @@
   const planner = new Planner();
   setContext(PLANNER, planner);
   let resetDialog: HTMLDialogElement;
+  let resetTrigger: HTMLButtonElement | undefined;
+  function openReset(event: MouseEvent) {
+    if (event.currentTarget instanceof HTMLButtonElement)
+      resetTrigger = event.currentTarget;
+    resetDialog.showModal();
+  }
+  function closeReset() {
+    resetDialog.close();
+    resetTrigger?.focus();
+  }
   let importInput: HTMLInputElement;
   let importError = $state('');
   onMount(() => planner.load());
@@ -85,9 +95,7 @@
         <span>A little structure. A lot of possibility.</span>
       </div>
       <div class="local-badge"><span></span>Just yours, on this device</div>
-      <button class="reset-button" onclick={() => resetDialog.showModal()}
-        >Reset demo plans</button
-      >
+      <button class="reset-button" onclick={openReset}>Reset demo plans</button>
     </div>
   </aside>
   <div class="app-content">
@@ -132,6 +140,7 @@
       </div>{/if}
     <main id="main">{@render children()}</main>
     <footer class="page-footer">
+      <button class="mobile-reset" onclick={openReset}>Reset demo plans</button>
       <span>Made for the way you wander.</span><span
         >Fictional plans · illustrative EUR estimates · no bookings</span
       >
@@ -146,12 +155,19 @@
     onclick={() => (planner.status = '')}><Icon name="close" /></button
   >
 </div>
-<dialog bind:this={resetDialog} aria-labelledby="reset-title">
+<dialog
+  bind:this={resetDialog}
+  aria-labelledby="reset-title"
+  oncancel={(event) => {
+    event.preventDefault();
+    closeReset();
+  }}
+>
   <div class="dialog-header">
     <span class="eyebrow">A FRESH PAGE</span><button
       class="icon-button"
       aria-label="Close reset dialog"
-      onclick={() => resetDialog.close()}><Icon name="close" /></button
+      onclick={closeReset}><Icon name="close" /></button
     >
   </div>
   <h2 id="reset-title">Start with the demo again?</h2>
@@ -160,13 +176,11 @@
     want a separate backup. You can also undo this reset during this visit.
   </p>
   <div class="dialog-actions">
-    <button class="secondary" onclick={() => resetDialog.close()}
-      >Keep my plans</button
-    ><button
+    <button class="secondary" onclick={closeReset}>Keep my plans</button><button
       class="primary"
       onclick={() => {
         planner.reset();
-        resetDialog.close();
+        closeReset();
       }}>Reset all plans</button
     >
   </div>

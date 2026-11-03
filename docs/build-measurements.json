@@ -3,13 +3,13 @@
   "method": "Actual adapter-static build output; gzip per file with Node zlib; totals across all routes, not a page-transfer or Lighthouse score",
   "js": {
     "files": 18,
-    "bytes": 140809,
-    "gzipBytes": 56833
+    "bytes": 141059,
+    "gzipBytes": 56949
   },
   "css": {
     "files": 1,
-    "bytes": 29806,
-    "gzipBytes": 7072
+    "bytes": 30087,
+    "gzipBytes": 7118
   },
   "fonts": {
     "files": 3,
@@ -23,8 +23,8 @@
   },
   "html": {
     "files": 5,
-    "bytes": 76027,
-    "gzipBytes": 18285
+    "bytes": 76255,
+    "gzipBytes": 18343
   },
   "imageFiles": [
     {

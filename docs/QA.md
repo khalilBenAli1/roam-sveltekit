@@ -25,7 +25,7 @@ The browser suite covers editing, mouse/keyboard order changes, moving between d
 
 | Asset group                          | Count | Actual bytes | Sum of per-file gzip bytes |
 | ------------------------------------ | ----: | -----------: | -------------------------: |
-| JavaScript, including service worker |    18 |      140,809 |                     56,833 |
+| JavaScript, including service worker |    18 |      141,059 |                     56,949 |
 | CSS                                  |     1 |       29,806 |                      7,072 |
 | WOFF2 fonts                          |     3 |       60,376 |                     60,244 |
 | Destination JPEGs (900px + 1536px)   |     6 |    2,563,800 |                  2,563,418 |

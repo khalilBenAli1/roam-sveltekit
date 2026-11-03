@@ -11,8 +11,11 @@
     }
   ],
   "errors": [],
+  "failed": [],
   "fonts": {
     "display": "Outfit, Arial, sans-serif",
-    "body": "Lato, Arial, sans-serif"
+    "body": "Lato, Arial, sans-serif",
+    "outfitLoaded": true,
+    "latoLoaded": true
   }
 }
